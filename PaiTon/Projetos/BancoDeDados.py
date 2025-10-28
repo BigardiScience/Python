@@ -13,7 +13,7 @@ def programadores():
             if chooseBusca.lower() == "sim":
                 consulta = str(input("Qual o nome? "))
                 for nome in Programadores:
-                    encontrado = True
+                encontrado = True
                     if nome == consulta:
                         print ("Incluso!")
                         encontrado = False
@@ -29,3 +29,4 @@ def programadores():
             else:
                 return "Fim do Programa" 
 print(programadores())
+
