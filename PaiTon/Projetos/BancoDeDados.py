@@ -18,7 +18,6 @@ def programadores():
                         break
                     else:
                         print ("Não encontrado! ")
-                        break
                 solicitacaoLista = str(input("Deseja ver a lista geral? "))
                 if solicitacaoLista.lower() == "sim":
                     print (Programadores)
@@ -32,6 +31,7 @@ def programadores():
 print(programadores())
 
 #Tudo isso está dentro de uma função!!! Ou seja, puxando impressão com o nome da função, temos o acesso de implementação de nomes em uma lista (banco de dados)
+
 
 
 
