@@ -23,7 +23,6 @@ def programadores():
                 solicitacaoLista = str(input("Deseja ver a lista geral? "))
                 if solicitacaoLista.lower() == "sim":
                     print (Programadores)
-                else:
                     solicitacaoInicio = str(input("Deseja retornar ao inicío? "))
                     if solicitacaoInicio.lower() == "sim":
                         continue
