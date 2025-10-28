@@ -27,6 +27,7 @@ def programadores():
                     else:
                         return "fim do programa"
                         break
-
-
 print(programadores())
+
+#Tudo isso está dentro de uma função!!! Ou seja, puxando impressão com o nome da função, temos o acesso de implementação de nomes em uma lista (banco de dados)
+
