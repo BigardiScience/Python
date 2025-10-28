@@ -13,10 +13,12 @@ def programadores():
             if chooseBusca.lower() == "sim":
                 consulta = str(input("Qual o nome? "))
                 for nome in Programadores:
+                    encontrado = True
                     if nome == consulta:
                         print ("Incluso!")
+                        encontrado = False
                         break
-                    else:
+                    if not encontrado:
                         print ("Não encontrado! ")
                 solicitacaoLista = str(input("Deseja ver a lista geral? "))
                 if solicitacaoLista.lower() == "sim":
@@ -27,11 +29,4 @@ def programadores():
                         continue
                     else:
                         break
-                        
 print(programadores())
-
-#Tudo isso está dentro de uma função!!! Ou seja, puxando impressão com o nome da função, temos o acesso de implementação de nomes em uma lista (banco de dados)
-
-
-
-
