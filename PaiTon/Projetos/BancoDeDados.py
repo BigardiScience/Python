@@ -26,5 +26,7 @@ def programadores():
                         continue
                     else:
                         return "fim do programa"
+                        break
+
 
 print(programadores())
