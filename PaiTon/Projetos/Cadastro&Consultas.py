@@ -1,3 +1,5 @@
+#Cadastro e filtro por 2 itens
+
 funcionarios = []
 
 while True:
