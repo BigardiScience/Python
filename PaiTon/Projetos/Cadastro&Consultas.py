@@ -1,26 +1,40 @@
-dados = []
-def cadastro():
-    while True:
-        nome = input("Digite o nome para cadastro: ")
-        idade = int(input("Digite a idade: "))
-        cargo = input("Cargo: ")
-        dados.append((nome,idade,cargo))
-        print(f"O {nome} com {idade} anos de idade foi cadastrado no cargo de {cargo}")
-        choose = input(f"Deseja continuar cadastrando? ")
-        if choose.lower() != "sim":
-            break
-    return f"Visão Geral : {dados}"
-print(cadastro())
+funcionarios = []
 
-for indice, busca in enumerate(dados, start=1):
-    nome = busca[0]
-    idade = busca[1]
-    cargo = busca[2]
-    print(f"{indice} - {nome} , {idade} , {cargo}")
-    opcaoInicio = input(f"Deseja retornar ao inicio? ")
-    if opcaoInicio.lower() != "sim":
-        print("Fim do Programa! ")
-        break
-    else:
-        print(cadastro())
-    #esse exercício achei deveras interessante por ter sido feito, conforme o restante, de forma independente aplicando apenas o conhecimento obtido
+while True:
+    #entrada de dados cadastro in tupla
+    solicitacao = input("Digite um nome: ")
+    idade = int(input("Digite a idade: "))
+    funcionarios.append((solicitacao,idade))
+    continuar = input(f"Deseja continuar cadastrando? ")
+    if continuar.lower() != "sim":
+        filtragem = input(f"Deseja filtrar algum dos dados? ")
+        if filtragem.lower() == "sim":
+            filtro = input(f"Por nome ou idade? ")
+            if filtro.lower() == "nome":
+                filtroNome = input("Qual o nome? ")
+                encontrado = False
+                for i, busca in enumerate(funcionarios,start=1):
+                    if busca[0] == filtroNome:
+                        print(f"Funcionário encontrado na posição {i} : {busca}")
+                        encontrado = True
+                        break
+                if not encontrado:
+                        print("Não Encontrado!")
+            elif filtro.lower() == "idade":
+                filtroIdade = int(input("Qual a idade? "))
+                encontradoIdade = False
+                for i, dataNascimento in enumerate(funcionarios,start=1):
+                    if dataNascimento[1] == filtroIdade:
+                        print(f"Funcionário encontrado na posição {i} : {dataNascimento}")
+                        encontradoIdade = True
+                        break
+                if not encontradoIdade:
+                    print("Não Encontrado!")
+        inicio = input("Deseja Voltar ao cadastro? ")
+        if inicio.lower() != "sim":
+            print("Até a Próxima!")
+            break
+
+
+        
+
