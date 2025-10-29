@@ -5,7 +5,7 @@ while True:
     nome = input("Digite o nome para cadastro: ")
     idade = int(input("Digite a idade: "))
     cargo = input("Cargo: ")
-    dados.append((nome,idade,cargo))
+    dados.append((nome,idade,cargo)) #um ponto interessante é que aqui adicionamos TUPLAS("Lista" que não podem ser alterada), dentro de uma lista.
     print(f"O {nome} com {idade} anos de idade foi cadastrado no cargo de {cargo}")
     choose = input(f"Deseja continuar cadastrando? ")
     if choose.lower() != "sim":
