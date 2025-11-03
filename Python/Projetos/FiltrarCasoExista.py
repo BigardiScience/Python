@@ -13,7 +13,7 @@ for busca in alunoS:
     if processoFiltro.lower() == "nome":
         FiltroNome = str(input("Digite o Nome: "))
         encontradoNome = False
-        for FiltroNome in busca:
+        if FiltroNome in busca:
             print("Já existente!")
             encontradoNome = True
             break
@@ -23,7 +23,7 @@ for busca in alunoS:
     elif processoFiltro.lower() == "idade":
         FiltroIdade = int(input("Digite a idade: "))
         encontradoIdade = False
-        for FiltroIdade in busca:
+        if FiltroIdade in busca:
             print("Já existente!")
             encontradoIdade = True
             break
@@ -33,10 +33,11 @@ for busca in alunoS:
     elif processoFiltro.lower() == "cidade":
         FiltroCidade = input("Digite a cidade: ")
         encontradoCidade = False
-        for filtroCidade in busca:
+        if filtroCidade in busca:
             print("Já existente")
             encontradoCidade = True
             break
         if not filtroCidade in busca:
             print("Não Encontrado.")
+
             break
