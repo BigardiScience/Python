@@ -5,6 +5,7 @@ alunoS = [("Guilherme", 21, "Jundiaí"),
          ("Pedro", 16, "Jundiaí"),
          ("Heitor", 16, "Louveira")]
 
+
 for busca in alunoS:
     nome = busca[0]
     idade = busca[1]
@@ -16,28 +17,33 @@ for busca in alunoS:
         if FiltroNome in busca:
             print("Já existente!")
             encontradoNome = True
-            break
+            
         if not FiltroNome in busca:
             print("Não Encontrado.")
-            break
+            
     elif processoFiltro.lower() == "idade":
         FiltroIdade = int(input("Digite a idade: "))
         encontradoIdade = False
         if FiltroIdade in busca:
             print("Já existente!")
             encontradoIdade = True
-            break
+            
         if not FiltroIdade in busca:
             print("Não Encontrado.")
-            break
+            
     elif processoFiltro.lower() == "cidade":
         FiltroCidade = input("Digite a cidade: ")
         encontradoCidade = False
-        if filtroCidade in busca:
+        if FiltroCidade in busca:
             print("Já existente")
             encontradoCidade = True
-            break
-        if not filtroCidade in busca:
+            
+        if not FiltroCidade in busca:
             print("Não Encontrado.")
-
-            break
+            
+    decisaoInicio = str(input("Deseja continuar filtrando? "))
+    if decisaoInicio.lower() == "nao":
+        print("Até mais! ")
+        break
+    
+            
