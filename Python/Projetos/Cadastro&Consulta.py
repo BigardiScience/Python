@@ -1,40 +1,39 @@
-funcionarios = []
-
+lista = []
 while True:
-    #entrada de dados cadastro in tupla
-    solicitacao = input("Digite um nome: ")
-    idade = int(input("Digite a idade: "))
-    funcionarios.append((solicitacao,idade))
-    continuar = input(f"Deseja continuar cadastrando? ")
-    if continuar.lower() != "sim":
-        filtragem = input(f"Deseja filtrar algum dos dados? ")
-        if filtragem.lower() == "sim":
-            filtro = input(f"Por nome ou idade? ")
-            if filtro.lower() == "nome":
-                filtroNome = input("Qual o nome? ")
-                encontrado = False
-                for i, busca in enumerate(funcionarios,start=1):
-                    if busca[0] == filtroNome:
-                        print(f"Funcionário encontrado na posição {i} : {busca}")
-                        encontrado = True
-                        break
-                if not encontrado:
-                        print("Não Encontrado!")
-            elif filtro.lower() == "idade":
-                filtroIdade = int(input("Qual a idade? "))
-                encontradoIdade = False
-                for i, dataNascimento in enumerate(funcionarios,start=1):
-                    if dataNascimento[1] == filtroIdade:
-                        print(f"Funcionário encontrado na posição {i} : {dataNascimento}")
-                        encontradoIdade = True
-                        break
-                if not encontradoIdade:
-                    print("Não Encontrado!")
-        inicio = input("Deseja Voltar ao cadastro? ")
-        if inicio.lower() != "sim":
-            print("Até a Próxima!")
+    pergunta = input("Deseja se cadastrar ou sair? ")
+    if pergunta.lower() == "cadastrar":
+        pergunta_nome = input("Digite um nome: ")
+        pergunta_idade = int(input("Digite a idade: "))
+        lista.append((pergunta_nome, pergunta_idade))
+        pergunta_filtro = input("Deseja filtrar? ")
+        pergunta_multipla = input("Por nome ou idade?")
+        if pergunta_multipla.lower() == "nome":
+            filtro_nome = input("Digite o nome para filtrar: ")
+            encontrado = False
+            for busca in lista:
+                if filtro_nome.lower() == busca[0].lower():
+                    print("Encontrado! ")
+                    encontrado = True
+                    break
+        elif pergunta_multipla.lower() == "idade":
+            filtro_idade = int(input("Digite a idade para filtrar: "))
+            encontrado = False
+            for busca in lista:
+                if filtro_idade == busca[1]:
+                    print("Encontrado! ")
+                    encontrado = True
+                    break
+            if not encontrado:
+                print("Não Encontrado. ")           
+
+        pergunta_final = input("Deseja voltar ao cadastro? ")
+        if pergunta_final.lower() != "sim":
+            pergunta_visualizar = input("Quer visualizar lista? ")
+            if pergunta_visualizar.lower() == "sim":
+                print(lista)
+            else:
+                print("Fim do programa! ")
             break
-
-
-        
-
+    elif pergunta.lower() == "sair":
+        print("Fim do Programa. ")
+        break
